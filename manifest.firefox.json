@@ -404,10 +404,5 @@
       ],
       "js": ["content.js"]
     }
-  ],
-  "applications": {
-    "gecko": {
-      "id": "googledeshitify.1lhfn@8alias.com"
-    }
-  }
+  ]
 }
