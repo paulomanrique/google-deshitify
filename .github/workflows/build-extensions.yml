@@ -15,8 +15,8 @@ jobs:
     - name: Prepare Firefox package
       run: |
         mkdir firefox
-        cp background_firefox.js firefox/background.js
-        cp manifest_firefox.json firefox/manifest.json
+        cp background.firefox.js firefox/background.js
+        cp manifest.firefox.json firefox/manifest.json
         cp content.js popup.html popup.js styles.css firefox/
         cp -r icons firefox/
         cp -r docs firefox/ || true
@@ -25,8 +25,8 @@ jobs:
     - name: Prepare Chrome package
       run: |
         mkdir chrome
-        cp background_chrome.js chrome/background.js
-        cp manifest_chrome.json chrome/manifest.json
+        cp background.chrome.js chrome/background.js
+        cp manifest.chrome.json chrome/manifest.json
         cp content.js popup.html popup.js styles.css chrome/
         cp -r icons chrome/
         cp -r docs chrome/ || true
