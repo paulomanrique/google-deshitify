@@ -1,8 +1,9 @@
 name: Build browser extension zips
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'  # Executa ao dar push em uma tag tipo v1.0.0
 
 jobs:
   build:
@@ -38,12 +39,13 @@ jobs:
     - name: Zip Chrome package
       run: cd chrome && zip -r ../google-deshitify-chrome.zip . && cd ..
 
-    - name: Upload Firefox zip as release asset
+    - name: Create GitHub Release and upload assets
       uses: softprops/action-gh-release@v2
       with:
-        files: google-deshitify-firefox.zip
-
-    - name: Upload Chrome zip as release asset
-      uses: softprops/action-gh-release@v2
-      with:
-        files: google-deshitify-chrome.zip
+        files: |
+          google-deshitify-firefox.zip
+          google-deshitify-chrome.zip
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
