@@ -2,7 +2,7 @@
 
 **Google Deshitify** is a browser extension for Firefox and Chromium-based browsers that automatically removes the AI Overview (the annoying “Google AI answer” at the top of your search) and blocks results from sites you never want to see again.
 
-- ⚡️ Instantly rewrites Google search URLs before the page loads—no flicker on Firefox!
+- ⚡️ Instantly rewrites Google search URLs before the page loads (on Firefox).
 - 🧹 Default filter removes **pleno.news** and lets you easily block other spammy/irrelevant sites (like Pinterest, Quora, etc).
 - 🖱 Add any site to your blocklist with one click (“Add current website”).
 - 🛡 Optionally disables only the AI Overview or runs with custom rules.
@@ -37,12 +37,16 @@
 4. Select the `manifest.json` inside your unzipped folder.
 5. That’s it! You’ll see the Deshitify icon; click it to access your settings.
 
-#### **For Chrome/Chromium (Chrome, Edge, Brave, etc)**
+#### **For Chrome/Chromium (Chrome, Opera, Edge, Brave, etc)**
 1. Unzip `google-deshitify-chrome.zip` to any folder.
 2. Go to `chrome://extensions` in your browser.
 3. Enable “Developer mode” (top-right).
 4. Click “Load unpacked” and select the unzipped folder with `manifest.json` inside.
-5. Extension is ready! Click the Deshitify icon to customize.
+5. **Important:**  
+   After loading, click “Details” for Google Deshitify and enable  
+   **“Allow access to search page results”**  
+   (without this, the extension can't run on Google Search results pages!)
+6. Extension is ready! Click the Deshitify icon to customize.
 
 ---
 
@@ -63,6 +67,16 @@
 
 ---
 
+## ⚠️ Chromium Browsers: Enable Search Page Access!
+
+> **NOTE:**  
+> On Chrome, Opera, Edge, Brave, and other Chromium-based browsers,  
+> after loading the extension, click “Details” and enable  
+> **“Allow access to search page results”**.  
+> Otherwise, the extension cannot work on Google Search!
+
+---
+
 ## Screenshots
 
 ![Screenshot of Google Deshitify extension](docs/screenshot.png)
@@ -80,7 +94,9 @@
 ## Browser compatibility
 
 - **Firefox:** Instant redirect, no flicker, dynamic blacklist, full features.
-- **Chrome/Chromium:** Dynamic blacklist and popup work perfectly; URL filtering applies just after load (a brief “flicker” may occur due to Chrome Manifest V3 restrictions).
+- **Chrome/Chromium:** Dynamic blacklist and popup work perfectly.  
+  URL filtering applies after page load, so a brief “flicker” may occur due to Manifest V3 restrictions.  
+  **You must enable “Allow access to search page results” in extension details!**
 
 ---
 

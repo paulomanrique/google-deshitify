@@ -6,8 +6,6 @@
   "permissions": [
     "storage",
     "scripting",
-    "webRequest",
-    "webRequestBlocking",
     "tabs"
   ],
   "host_permissions": [
