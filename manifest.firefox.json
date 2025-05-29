@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Google Deshitify",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Removes AI Overview and filters useless sites from Google search results.",
   "permissions": [
     "storage",
