@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Google Deshitify",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Removes AI Overview and filters useless sites from Google search results.",
   "permissions": [
     "storage",
@@ -198,7 +198,7 @@
     "https://www.google.cat/*"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.chrome.js"
   },
   "action": {
     "default_popup": "popup.html",
