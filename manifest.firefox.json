@@ -200,7 +200,7 @@
       "https://www.google.cat/*"
     ],
     "background": {
-      "scripts": ["background.js"]
+      "scripts": ["background.firefox.js"]
     },
     "action": {
       "default_popup": "popup.html",
