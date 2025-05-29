@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Deshitify</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h3>Google Deshitify</h3>
+  <label>
+    <input type="checkbox" id="disableAi" checked>
+    Disable AI Overview
+  </label>
+  <br><br>
+  <button id="addCurrentSite" style="margin-bottom: 10px;">Add current website</button>
+  <br>
+  <label>Ignored sites:</label>
+  <table id="blacklistTable" style="width: 100%; margin-bottom: 12px;">
+    <tbody id="blacklistBody"></tbody>
+  </table>
+  <form id="addForm" style="display: flex; gap: 6px;">
+    <input type="text" id="addSite" placeholder="Add site (e.g. pinterest.*)" style="flex:1;">
+    <button type="submit">Add</button>
+  </form>
+  <button id="save" style="margin-top:12px;">Save</button>
+  <div id="msg"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

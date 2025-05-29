@@ -1,0 +1,29 @@
+body {
+    font-family: sans-serif;
+    margin: 16px;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    padding: 4px 2px;
+  }
+  input[type="text"] {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+  button {
+    background: #e74c3c;
+    color: #fff;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button[style*="background: transparent"] {
+    background: transparent;
+    color: #e74c3c;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  

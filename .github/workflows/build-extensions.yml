@@ -1,0 +1,49 @@
+name: Build browser extension zips
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Prepare Firefox package
+      run: |
+        mkdir firefox
+        cp background_firefox.js firefox/background.js
+        cp manifest_firefox.json firefox/manifest.json
+        cp content.js popup.html popup.js styles.css firefox/
+        cp -r icons firefox/
+        cp -r docs firefox/ || true
+      shell: bash
+
+    - name: Prepare Chrome package
+      run: |
+        mkdir chrome
+        cp background_chrome.js chrome/background.js
+        cp manifest_chrome.json chrome/manifest.json
+        cp content.js popup.html popup.js styles.css chrome/
+        cp -r icons chrome/
+        cp -r docs chrome/ || true
+      shell: bash
+
+    - name: Zip Firefox package
+      run: cd firefox && zip -r ../google-deshitify-firefox.zip . && cd ..
+
+    - name: Zip Chrome package
+      run: cd chrome && zip -r ../google-deshitify-chrome.zip . && cd ..
+
+    - name: Upload Firefox zip as release asset
+      uses: softprops/action-gh-release@v2
+      with:
+        files: google-deshitify-firefox.zip
+
+    - name: Upload Chrome zip as release asset
+      uses: softprops/action-gh-release@v2
+      with:
+        files: google-deshitify-chrome.zip
