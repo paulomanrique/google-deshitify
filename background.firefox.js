@@ -2,14 +2,14 @@ function getBlacklistAndAi(callback) {
     if (typeof browser !== "undefined") {
       browser.storage.local.get(['deshitifyBlacklist', 'disableAi']).then(res => {
         callback(
-          res.deshitifyBlacklist || ["pinterest.*", "pleno.news"],
+          res.deshitifyBlacklist || ["pleno.news"],
           typeof res.disableAi === "undefined" ? true : res.disableAi
         );
       });
     } else if (typeof chrome !== "undefined") {
       chrome.storage.local.get(['deshitifyBlacklist', 'disableAi'], res => {
         callback(
-          res.deshitifyBlacklist || ["pinterest.*", "pleno.news"],
+          res.deshitifyBlacklist || ["pleno.news"],
           typeof res.disableAi === "undefined" ? true : res.disableAi
         );
       });

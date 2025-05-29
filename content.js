@@ -4,19 +4,19 @@
       if (typeof browser !== "undefined" && browser.storage && browser.storage.local) {
         browser.storage.local.get(['deshitifyBlacklist', 'disableAi']).then(res => {
           cb(
-            res.deshitifyBlacklist || ["pinterest.*", "quora.*"],
+            res.deshitifyBlacklist || ["pleno.news"],
             typeof res.disableAi === "undefined" ? true : res.disableAi
           );
         });
       } else if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.local) {
         chrome.storage.local.get(['deshitifyBlacklist', 'disableAi'], res => {
           cb(
-            res.deshitifyBlacklist || ["pinterest.*", "quora.*"],
+            res.deshitifyBlacklist || ["pleno.news"],
             typeof res.disableAi === "undefined" ? true : res.disableAi
           );
         });
       } else {
-        cb(["pinterest.*", "quora.*"], true);
+        cb(["pleno.news"], true);
       }
     }
   
