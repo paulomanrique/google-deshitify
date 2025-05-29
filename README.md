@@ -2,8 +2,8 @@
 
 **Google Deshitify** is a browser extension for Firefox and Chromium-based browsers that automatically removes the AI Overview (the annoying “Google AI answer” at the top of your search) and blocks results from sites you never want to see again.
 
-- ⚡️ Instantly rewrites Google search URLs before the page loads—no flicker!
-- 🧹 Default filter removes **pleno.news** (yes, do not qq about it) and lets you easily block other spammy/irrelevant sites (like pinterest, quora, etc).
+- ⚡️ Instantly rewrites Google search URLs before the page loads—no flicker on Firefox!
+- 🧹 Default filter removes **pleno.news** and lets you easily block other spammy/irrelevant sites (like Pinterest, Quora, etc).
 - 🖱 Add any site to your blocklist with one click (“Add current website”).
 - 🛡 Optionally disables only the AI Overview or runs with custom rules.
 - 🖤 100% client-side, private, open source, and zero analytics.
@@ -14,18 +14,52 @@
 
 - **Blocks Google AI Overview** with a simple toggle (default: on).
 - **Persistent blacklist**: Add or remove any site, via table or one-click from the popup.
-- **Works instantly**: Redirection happens before Google can even show the AI box or blocked sites.
+- **Works instantly**: Redirection happens before Google can even show the AI box or blocked sites (on Firefox).
 - **No bloat, no trackers, no ads**.
 
 ---
 
 ## Installation
 
-1. **[Download this repository as ZIP](https://github.com/seuusuario/google-deshitify/archive/refs/heads/main.zip)** or `git clone https://github.com/seuusuario/google-deshitify.git`
-2. Open your browser's extensions/add-ons page:
-   - **Firefox:** `about:debugging#/runtime/this-firefox` → "Load Temporary Add-on..." → select `manifest.json`
-   - **Chrome/Chromium/Brave/Edge:** `chrome://extensions` → enable "Developer mode" → "Load unpacked" → select the folder.
-3. Use Google as usual. Click the Deshitify icon to edit your blacklist or settings.
+### 🔥 Easiest Way (Recommended)
+
+**Download the ready-to-use package for your browser from the [latest release page](https://github.com/paulomanrique/google-deshitify/releases/latest):**
+
+- [google-deshitify-firefox.zip](https://github.com/paulomanrique/google-deshitify/releases/latest)
+- [google-deshitify-chrome.zip](https://github.com/paulomanrique/google-deshitify/releases/latest)
+
+**Then:**
+
+#### **For Firefox**
+1. Unzip `google-deshitify-firefox.zip` to any folder.
+2. Open `about:debugging#/runtime/this-firefox` in Firefox.
+3. Click “Load Temporary Add-on…”
+4. Select the `manifest.json` inside your unzipped folder.
+5. That’s it! You’ll see the Deshitify icon; click it to access your settings.
+
+#### **For Chrome/Chromium (Chrome, Edge, Brave, etc)**
+1. Unzip `google-deshitify-chrome.zip` to any folder.
+2. Go to `chrome://extensions` in your browser.
+3. Enable “Developer mode” (top-right).
+4. Click “Load unpacked” and select the unzipped folder with `manifest.json` inside.
+5. Extension is ready! Click the Deshitify icon to customize.
+
+---
+
+### 💻 Manual Build (for contributors/advanced users)
+
+1. Clone the repo:
+    ```sh
+    git clone https://github.com/paulomanrique/google-deshitify.git
+    cd google-deshitify
+    ```
+2. For **Firefox**:
+    - Copy/rename `manifest_firefox.json` to `manifest.json`
+    - Copy/rename `background_firefox.js` to `background.js`
+3. For **Chrome/Chromium**:
+    - Copy/rename `manifest_chrome.json` to `manifest.json`
+    - Copy/rename `background_chrome.js` to `background.js`
+4. Load as above.
 
 ---
 
@@ -40,6 +74,13 @@
 - Add any site with "Add current website".
 - You can block any domain, wildcard or not (e.g. `example.com`, `pinterest.*`, `subdomain.domain.com`).
 - All options are saved locally and can be changed anytime from the popup.
+
+---
+
+## Browser compatibility
+
+- **Firefox:** Instant redirect, no flicker, dynamic blacklist, full features.
+- **Chrome/Chromium:** Dynamic blacklist and popup work perfectly; URL filtering applies just after load (a brief “flicker” may occur due to Chrome Manifest V3 restrictions).
 
 ---
 
